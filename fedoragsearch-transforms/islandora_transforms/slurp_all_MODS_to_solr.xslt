@@ -242,5 +242,18 @@
     </field>
   </xsl:template>
 
+  <!-- add mods_titleInfo_title_ms -->
+  <xsl:template match="mods:mods/mods:titleInfo" mode="utk_MODS">
+    <field name="mods_titleInfo_title_ms">
+      <xsl:value-of select="normalize-space(child::mods:title)"/>
+    </field>
+  </xsl:template>
+
+  <!-- add mods_genre_ms -->
+  <xsl:template match="mods:mods/mods:genre" mode="utk_MODS">
+    <field name="mods_genre_ms">
+      <xsl:value-of select="normalize-space(.)"/>
+    </field>
+  </xsl:template>
 
 </xsl:stylesheet>
