@@ -256,4 +256,24 @@
     </field>
   </xsl:template>
 
+  <!-- add mods_note_Tags_ms -->
+  <xsl:template match="mods:mods/mods:note[@displayLabel='Tags']" mode="utk_MODS">
+    <field name="mods_note_Tags_ms">
+      <xsl:value-of select="normalize-space(.)"/>
+    </field>
+  </xsl:template>
+
+  <!-- add mods_originInfo_ms -->
+  <xsl:template match="mods:mods/mods:originInfo[mods:dateCreated or mods:dateOther]" mode="utk_MODS">
+    <field name="mods_originInfo_dateCreated_ms">
+      <xsl:value-of select="normalize-space(child::mods:dateCreated or child::mods:dateOther)"/>
+    </field>
+  </xsl:template>
+
+  <xsl:template match="mods:mods/mods:originInfo[mods:dateIssued]" mode="utk_MODS">
+    <field name="">
+      <xsl:value-of select="."/>
+    </field>
+  </xsl:template>
+
 </xsl:stylesheet>
