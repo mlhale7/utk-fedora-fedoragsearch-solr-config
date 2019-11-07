@@ -91,6 +91,13 @@
           <xsl:value-of select="concat($decade, '0s')"/>
     </field>
   </xsl:template>
+
+  <!-- add utk_mods_titleInfo_title_ms -->
+  <xsl:template match="mods:mods/mods:titleInfo[not(@supplied)]/mods:title" mode="utk_MODS">
+    <field name="utk_mods_titleInfo_title_ms">
+      <xsl:value-of select="normalize-space(.)"/>
+    </field>
+  </xsl:template>
   
   <!-- the following template creates a Supplied Title field -->
   <xsl:template match="mods:mods/mods:titleInfo[@supplied='yes']/mods:title" mode="utk_MODS">
@@ -225,13 +232,6 @@
   <xsl:template match="mods:mods/mods:tableOfContents" mode="utk_MODS">
     <field name="utk_mods_toc_ms">
       <xsl:value-of select="normalize-space(.)"/>
-    </field>
-  </xsl:template>
-
-  <!-- add mods_titleInfo_title_ms -->
-  <xsl:template match="mods:mods/mods:titleInfo" mode="utk_MODS">
-    <field name="mods_titleInfo_title_ms">
-      <xsl:value-of select="normalize-space(child::mods:title)"/>
     </field>
   </xsl:template>
 
