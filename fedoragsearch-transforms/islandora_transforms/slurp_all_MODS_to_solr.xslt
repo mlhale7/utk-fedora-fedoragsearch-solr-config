@@ -228,13 +228,6 @@
     </field>
   </xsl:template>
 
-  <!-- add mods_identifier_local_ms -->
-  <xsl:template match="mods:mods/mods:identifier[@type='local']">
-    <field name="mods_identifier_local_ms">
-      <xsl:value-of select="normalize-space(.)"/>
-    </field>
-  </xsl:template>
-
   <!-- add mods_titleInfo_title_ms -->
   <xsl:template match="mods:mods/mods:titleInfo" mode="utk_MODS">
     <field name="mods_titleInfo_title_ms">
