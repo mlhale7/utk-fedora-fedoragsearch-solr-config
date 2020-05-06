@@ -433,6 +433,13 @@
     </field>
   </xsl:template>
   
+  <!-- add utk_mods_relatedItem_series_titleInfo_title_ms -->
+  <xsl:template match="mods:relatedItem[@type='series']/mods:titleInfo/mods:title" mode="utk_MODS">
+    <field name="utk_mods_relatedItem_series_titleInfo_title_ms">
+      <xsl:value-of select="normalize-space(.)"/>
+    </field>
+  </xsl:template>
+  
   <!-- add utk_mods_relatedItem_featuredItem_identifier_ms -->
   <xsl:template match="mods:relatedItem[@displayLabel='Featured Item']/mods:identifier" mode="utk_MODS">
     <field name="utk_mods_relatedItem_featuredItem_identifier_ms">
